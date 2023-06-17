@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="202306-0001-1" author="tahakaya36@hotmail.com">
+        <createTable tableName="person">
+            <column name="id" type="${uuid_type}" defaultValueComputed="${uuid_function}">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="kullanici_pk"/>
+            </column>
+            <column name="firstname" type="varchar2(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="varchar2(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="person_role" type="varchar2(50)">
+            </column>
+            <column name="email" type="varchar2(100)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar2(255)"/>
+            <column name="active" type="boolean"/>
+            <column name="last_modified_by" type="${uuid_type}"/>
+            <column name="created_by" type="${uuid_type}"/>
+            <column name="last_modified_date" type="timestamp" defaultValueComputed="current_timestamp"/>
+            <column name="create_date" type="timestamp" defaultValueComputed="current_timestamp"/>
+        </createTable>
+        <createIndex tableName="person" indexName="person_person_role_idx">
+            <column name="person_role"></column>
+        </createIndex>
+        <createIndex tableName="person" indexName="person_email_idx" unique="true">
+            <column name="email"></column>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

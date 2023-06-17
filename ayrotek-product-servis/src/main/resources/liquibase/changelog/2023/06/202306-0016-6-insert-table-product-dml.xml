@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="202306-0016-6" author="tahakaya36@hotmail.com">
+        <insert tableName="product">
+            <column name="product_name" value="seker"/>
+            <column name="price" value="2000.0"/>
+            <column name="tax" value="2.9999"/>
+            <column name="last_modified_by" value="5ea1b7cf-99e2-4c4c-9268-4c3d3ce54a08"/>
+            <column name="created_by" value="5ea1b7cf-99e2-4c4c-9268-4c3d3ce54a08"/>
+            <column name="last_modified_date" valueComputed="(SELECT CURRENT_DATE)"/>
+            <column name="create_date" valueComputed="(SELECT CURRENT_DATE)"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
