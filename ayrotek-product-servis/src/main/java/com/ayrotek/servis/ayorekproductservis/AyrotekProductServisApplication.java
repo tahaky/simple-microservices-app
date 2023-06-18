@@ -11,16 +11,3 @@ public class AyrotekProductServisApplication {
     }
 
 }
-
-
-
-
-/*
-*
-* public class ArizaTespitApiServisApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(ArizaTespitApiServisApplication.class, args);
-    }
-
-}*/
